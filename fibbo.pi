@@ -1,0 +1,34 @@
+def fibo(n):
+ a = 0
+ b = 1
+ while a <= n:
+ if n == a:
+ return str(n) + " " + "is a Fibonacci Number"
+ a, b = b, a + b
+ return str(n) + " " + "is not a Fibonacci Number"
+def fun():
+ print("\n####### Fibonacci Series Predictor/Detector ###########\n")
+ try:
+ try:
+ n = list(map(int,input("Enter a series of number: ").split(",")))
+ for i in n:
+ print(fibo(i))
+ except:
+ print("Invalid Input, Please give comma e.g: 1,2,3,4")
+ fun()
+ print("\nChoose From Below:- ")
+ print("1. Run Again")
+ print("2. Exit")
+ menu()
+ except KeyboardInterrupt:
+ exit()
+def menu():
+ n = input("Enter: ")
+ if n == "1":
+ fun()
+ elif n == "2":
+ exit()
+ else:
+ print("Invalid Input, Please Try Again")
+ menu()
+fun()
